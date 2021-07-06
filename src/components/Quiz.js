@@ -1,16 +1,17 @@
 import React from "react";
 
+import Card from "./Card";
+import Button from "./Button";
+
 function Quiz() {
   return (
-    <div className="p-4 mb-4 bg-white rounded-lg shadow-md">
+    <Card>
       <h2>Geography</h2>
       <div className="w-full flex flex-row items-center justify-between">
         <p>Score: 8/10</p>
-        <button className="py-2 px-4 rounded-lg bg-purple-800 text-purple-50 text-sm font-bold uppercase">
-          start
-        </button>
+        <Button text="start" />
       </div>
-    </div>
+    </Card>
   );
 }
 
