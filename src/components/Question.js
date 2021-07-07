@@ -5,7 +5,7 @@ import Button from "./Button";
 
 import { RadioGroup } from "@headlessui/react";
 
-function Question() {
+function Question({ id }) {
   let [answer, setAnswer] = useState("Tokyo");
 
   return (

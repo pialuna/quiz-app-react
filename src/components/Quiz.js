@@ -3,10 +3,10 @@ import React from "react";
 import Card from "./Card";
 import Button from "./Button";
 
-function Quiz() {
+function Quiz({ id, name }) {
   return (
     <Card>
-      <h2>Geography</h2>
+      <h2>{name}</h2>
       <div className="w-full flex flex-row items-center justify-between">
         <p>Score: 8/10</p>
         <Button text="start" />
