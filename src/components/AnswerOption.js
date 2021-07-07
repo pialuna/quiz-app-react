@@ -2,7 +2,7 @@ import React from "react";
 
 import Card from "./Card";
 
-function Option({ text, checked }) {
+function AnswerOption({ text, checked }) {
   const buttonStyle = `bg-purple-200 
 	border-purple-400 border-2`;
   const checkedButtonStyle = `bg-purple-900 
@@ -20,4 +20,4 @@ function Option({ text, checked }) {
   );
 }
 
-export default Option;
+export default AnswerOption;

@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 
-import Option from "./Option";
+import AnswerOption from "./AnswerOption";
 import Button from "./Button";
 
 import { RadioGroup } from "@headlessui/react";
@@ -18,13 +18,13 @@ function Question({ id }) {
       <RadioGroup value={answer} onChange={setAnswer}>
         <RadioGroup.Label className="sr-only">Answer</RadioGroup.Label>
         <RadioGroup.Option value="Tokyo">
-          {({ checked }) => <Option text="Tokyo" checked={checked} />}
+          {({ checked }) => <AnswerOption text="Tokyo" checked={checked} />}
         </RadioGroup.Option>
         <RadioGroup.Option value="Hong Kong">
-          {({ checked }) => <Option text="Hong Kong" checked={checked} />}
+          {({ checked }) => <AnswerOption text="Hong Kong" checked={checked} />}
         </RadioGroup.Option>
         <RadioGroup.Option value="New York">
-          {({ checked }) => <Option text="New York" checked={checked} />}
+          {({ checked }) => <AnswerOption text="New York" checked={checked} />}
         </RadioGroup.Option>
       </RadioGroup>
 
