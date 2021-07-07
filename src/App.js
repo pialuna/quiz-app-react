@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
-import QuizList from "./components/QuizList";
+import Quizzes from "./components/Quizzes";
 import Question from "./components/Question";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
         <div className="p-4">
           <Switch>
             <Route exact path="/">
-              <QuizList />
+              <Quizzes />
             </Route>
             <Route exact path="/question">
               <Question />

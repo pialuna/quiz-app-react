@@ -2,7 +2,7 @@ import React from "react";
 
 import Quiz from "./Quiz";
 
-function QuizList() {
+function Quizzes() {
   return (
     <div>
       <Quiz />
@@ -12,4 +12,4 @@ function QuizList() {
   );
 }
 
-export default QuizList;
+export default Quizzes;
