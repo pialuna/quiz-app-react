@@ -3,7 +3,7 @@ import React from "react";
 import Card from "./Card";
 import Button from "./Button";
 
-function Quiz({ id, name }) {
+function QuizCard({ id, name }) {
   return (
     <Card>
       <h2>{name}</h2>
@@ -15,4 +15,4 @@ function Quiz({ id, name }) {
   );
 }
 
-export default Quiz;
+export default QuizCard;
