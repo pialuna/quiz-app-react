@@ -1,10 +1,13 @@
 import React from "react";
+import { useParams, Link } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 
 import Question from "./Question";
 import Button from "./Button";
 
-function Quiz({ id }) {
+function Quiz() {
+  const { id, questionId } = useParams();
+
   const QUIZ = gql`
     query GetQuiz($id: uuid!) {
       quizzes(where: { id: { _eq: $id } }) {
@@ -25,30 +28,53 @@ function Quiz({ id }) {
   });
 
   if (loading) return <p className="text-purple-300">Loading ...</p>;
-  if (error) {
-    console.log(error);
-    return <p>Error</p>;
+  if (error) return <p className="text-purple-600">{error.message}</p>;
+
+  // Get the current question
+
+  const quiz = { ...data.quizzes[0] };
+  let currentIndex = 0;
+
+  if (questionId) {
+    currentIndex = quiz.questions.findIndex(
+      (question) => question.id === questionId
+    );
   }
+  const currentQuestion = quiz.questions[currentIndex];
 
-  console.log(data);
-  const quizName = data.quizzes[0].name;
-  const questions = data.quizzes[0].questions;
-
-  // TO DO: choose question
-  const firstQuestion = questions[0];
+  const previousQuestionId = quiz.questions[currentIndex - 1]?.id;
+  const nextQuestionId = quiz.questions[currentIndex + 1]?.id;
 
   return (
     <div>
-      <h1 className={`text-center mb-4`}>{quizName}</h1>
+      <h1 className={`text-center mb-4`}>{quiz.name}</h1>
       <Question
-        text={firstQuestion.text}
-        answer={firstQuestion.answer}
-        options={firstQuestion.options}
+        quizId={id}
+        id={currentQuestion.id}
+        text={currentQuestion.text}
+        correctAnswer={currentQuestion.answer}
+        options={currentQuestion.options}
       />
 
       <div className="w-full flex flex-row justify-center items-center">
-        <Button text="back" />
-        <Button text="next" />
+        {previousQuestionId ? (
+          <Link to={`/quiz/${id}/question/${previousQuestionId}`}>
+            <Button text="back" />
+          </Link>
+        ) : (
+          <Link to={`/dashboard`}>
+            <Button text="back" />
+          </Link>
+        )}
+        {nextQuestionId ? (
+          <Link to={`/quiz/${id}/question/${nextQuestionId}`}>
+            <Button text="next" />
+          </Link>
+        ) : (
+          <Link to={`/dashboard`}>
+            <Button text="finish" />
+          </Link>
+        )}
       </div>
     </div>
   );
