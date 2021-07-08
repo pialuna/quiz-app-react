@@ -17,11 +17,11 @@ function App() {
             <Route exact path="/dashboard">
               <Quizzes />
             </Route>
-            <Route exact path="/quiz/:quizId/question/:questionId">
-              <Quiz id="03daf064-0b47-40c5-9b39-0d81a5f58397" />
+            <Route exact path="/quiz/:id/question/:questionId">
+              <Quiz />
             </Route>
-            <Route exact path="/quiz">
-              <Quiz id="03daf064-0b47-40c5-9b39-0d81a5f58397" />
+            <Route path="/quiz/:id">
+              <Quiz />
             </Route>
             <Route path="*">
               <div></div>
