@@ -10,7 +10,7 @@ function App() {
       <Router>
         <Header />
 
-        <div className="p-4">
+        <div className="p-4 flex justify-center items-center">
           <Switch>
             <Route exact path="/">
               <Quizzes />
