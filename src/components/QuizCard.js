@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useReactiveVar } from "@apollo/client";
 
 import Card from "./Card";
 import Button from "./Button";
 
-import { givenAnswersVar } from "../index";
+import { useReactiveVar } from "@apollo/client";
+import { givenAnswersVar } from "../App";
 
 function QuizCard({ id, name }) {
   // calculate the score

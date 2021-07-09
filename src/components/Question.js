@@ -1,10 +1,10 @@
 import { React, useState } from "react";
-import { useReactiveVar } from "@apollo/client";
 
 import { RadioGroup } from "@headlessui/react";
 import AnswerOption from "./AnswerOption";
 
-import { givenAnswersVar } from "../index";
+import { useReactiveVar } from "@apollo/client";
+import { givenAnswersVar } from "../App";
 
 function Question({ quizId, id, text, correctAnswer, options }) {
   // options to array
