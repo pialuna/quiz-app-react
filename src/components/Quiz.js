@@ -44,7 +44,7 @@ function Quiz() {
   const nextQuestionId = quiz.questions[currentIndex + 1]?.id;
 
   return (
-    <div>
+    <div className="w-full md:w-1/2 flex flex-col justify-center items-center">
       <h1 className={`text-center mb-4`}>{quiz.name}</h1>
       <Question
         quizId={id}

@@ -37,7 +37,7 @@ function Question({ quizId, id, text, correctAnswer, options }) {
   };
 
   return (
-    <div>
+    <div className="w-full">
       <h3 className={`text-center mb-4`}>{text}</h3>
 
       <RadioGroup value={selectedOption} onChange={saveAnswer}>
