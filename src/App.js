@@ -11,7 +11,7 @@ import {
   makeVar,
 } from "@apollo/client";
 
-// create reactive variable
+// create reactive variable (chache all given answers)
 export const givenAnswersVar = makeVar([]);
 
 const client = new ApolloClient({
