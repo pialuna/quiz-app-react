@@ -4,8 +4,6 @@ import { useQuery, gql } from "@apollo/client";
 import QuizCard from "./QuizCard";
 
 function Quizzes() {
-  // TO DO: score as local-only field?
-
   const QUIZZES = gql`
     query GetQuizzes {
       quizzes {
@@ -21,7 +19,7 @@ function Quizzes() {
   if (error) return <p className="text-purple-600">{error.message}</p>;
 
   return data.quizzes.map(({ id, name }) => (
-    <QuizCard key={id} id={id} name={name} score="" />
+    <QuizCard key={id} id={id} name={name} />
   ));
 }
 
