@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
 import Quizzes from "./components/Quizzes";
 import Quiz from "./components/Quiz";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
               <Quiz />
             </Route>
             <Route path="*">
-              <div></div>
+              <NotFound />
             </Route>
           </Switch>
         </div>
