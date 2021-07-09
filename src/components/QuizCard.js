@@ -14,7 +14,7 @@ function QuizCard({ id, name }) {
     (answer) => answer.quizId === id
   );
   const correctAnswers = thisQuizGivenAnswers.filter(
-    (answer) => answer.isCorrect === true
+    (answer) => answer.isCorrect
   );
   const score = correctAnswers.length;
 

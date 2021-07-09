@@ -30,11 +30,9 @@ function Quiz() {
   if (loading) return <p className="text-purple-300">Loading ...</p>;
   if (error) return <p className="text-purple-600">{error.message}</p>;
 
-  // Get the current question
-
   const quiz = { ...data.quizzes[0] };
   let currentIndex = 0;
-
+  // Get the current question
   if (questionId) {
     currentIndex = quiz.questions.findIndex(
       (question) => question.id === questionId

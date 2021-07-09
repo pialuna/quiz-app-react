@@ -28,14 +28,12 @@ function Question({ quizId, id, text, correctAnswer, options }) {
         isCorrect: answer === correctAnswer,
       });
     } else {
-      // update the answer
+      // update the current answer
       currentQuestionAnswer.answer = answer;
       currentQuestionAnswer.isCorrect = answer === correctAnswer;
     }
-
     // update the reactive variable givenAnswersVar
     givenAnswersVar(givenAnswers);
-    console.log(givenAnswersVar());
   };
 
   return (
